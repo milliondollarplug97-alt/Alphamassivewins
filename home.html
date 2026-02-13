@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE MASSIVE WINS BETTING COMPANY</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@400;500&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1db954;
+            --primary-dark: #168f3e;
+            --accent: #ffd700;
+            --blue: #0a7cff;
+            --bg: #f4f8f6;
+            --card-bg: #fff;
+            --text: #222;
+            --header-gradient: linear-gradient(90deg, #1db954 0%, #0a7cff 100%);
+        }
+        body {
+            margin: 0;
+            font-family: 'Roboto', Arial, Helvetica, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+        }
+        header {
+            background: var(--header-gradient);
+            color: #fff;
+            padding: 32px 20px 24px 20px;
+            text-align: center;
+            border-bottom-left-radius: 32px;
+            border-bottom-right-radius: 32px;
+            box-shadow: 0 4px 24px 0 rgba(30,80,80,0.10);
+        }
+        header h1 {
+            margin: 0;
+            font-family: 'Montserrat', 'Orbitron', Arial, sans-serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        header p {
+            font-size: 1.2rem;
+            font-family: 'Roboto', Arial, sans-serif;
+            margin-top: 8px;
+            opacity: 0.95;
+        }
+        .container {
+            max-width: 900px;
+            margin: 32px auto 0 auto;
+            padding: 0 20px 32px 20px;
+        }
+        .card {
+            background: var(--card-bg);
+            padding: 32px 28px 28px 28px;
+            border-radius: 18px;
+            box-shadow: 0 4px 24px 0 rgba(30,80,80,0.10);
+            margin-bottom: 32px;
+            transition: box-shadow 0.2s;
+        }
+        .card:hover {
+            box-shadow: 0 8px 32px 0 rgba(30,80,80,0.16);
+        }
+        .card h2 {
+            margin-top: 0;
+            color: var(--primary);
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        ul {
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        ul li {
+            font-size: 1.08rem;
+            margin-bottom: 0.5rem;
+            font-family: 'Roboto', Arial, sans-serif;
+        }
+        form input, form select {
+            width: 100%;
+            padding: 13px 14px;
+            margin-top: 12px;
+            border-radius: 7px;
+            border: 1.5px solid #e0e0e0;
+            font-size: 1.08rem;
+            font-family: 'Roboto', Arial, sans-serif;
+            background: #f9f9f9;
+            transition: border 0.2s;
+        }
+        form input:focus, form select:focus {
+            border: 1.5px solid var(--primary);
+            outline: none;
+            background: #fff;
+        }
+        form button {
+            width: 100%;
+            padding: 14px;
+            margin-top: 18px;
+            border-radius: 7px;
+            border: none;
+            font-size: 1.15rem;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--primary) 60%, var(--blue) 100%);
+            color: #fff;
+            cursor: pointer;
+            box-shadow: 0 2px 8px 0 rgba(30,80,80,0.08);
+            letter-spacing: 1px;
+            transition: background 0.2s, box-shadow 0.2s;
+        }
+        form button:hover {
+            background: linear-gradient(90deg, var(--primary-dark) 60%, var(--blue) 100%);
+            box-shadow: 0 4px 16px 0 rgba(30,80,80,0.13);
+        }
+        .notice {
+            font-size: 0.98rem;
+            color: #888;
+            margin-top: 14px;
+            font-family: 'Roboto', Arial, sans-serif;
+        }
+        footer {
+            text-align: center;
+            padding: 18px 10px 10px 10px;
+            font-size: 1rem;
+            color: #fff;
+            background: var(--primary);
+            border-top-left-radius: 18px;
+            border-top-right-radius: 18px;
+            margin-top: 40px;
+            font-family: 'Montserrat', Arial, sans-serif;
+            letter-spacing: 1px;
+        }
+        @media (max-width: 600px) {
+            .container { padding: 0 4px 24px 4px; }
+            .card { padding: 18px 6px 18px 6px; }
+            header { padding: 22px 4px 16px 4px; }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>THE MASSIVE WINS BETTING COMPANY</h1>
+    <p>Betting made simple with correct odds and fast payouts</p>
+</header>
+<div class="container">
+    <div class="card">
+        <h2>Why Choose Us?</h2>
+        <ul>
+            <li>✔ Fast payouts</li>
+            <li>✔ correct odds</li>
+            <li>✔ 50% welcoming bonus on your first deposit</li>
+            <li>✔ Support available</li>
+            <li>✔ Ensure to have a telegram account for 100% support</li>
+        </ul>
+    </div>
+    <div class="card">
+        <h2>New User Account</h2>
+        <div id="formContainer">
+            <form id="step1Form" onsubmit="proceedToDetails(event)">
+                <input type="text" id="fullName" placeholder="Full Name" required style="margin-bottom:8px;padding:10px;border-radius:5px;border:1px solid #ccc;" />
+                <input type="text" id="countryFilter" placeholder="Search country or code (e.g. +1, United States)" style="margin-bottom:8px;padding:10px;border-radius:5px;border:1px solid #ccc;" />
+                <div style="display:flex;gap:8px;">
+                    <select id="phoneCode" style="width:120px;padding:10px;border-radius:5px;border:1px solid #ccc;"></select>
+                    <input type="tel" id="phoneLocal" placeholder="Local number (e.g. 123456789)" required style="flex:1;" inputmode="numeric" />
+                </div>
+                <div style="position:relative;">
+                    <input type="password" id="password" placeholder="Password" required style="padding-right:40px;">
+                    <span id="togglePassword" style="position:absolute;top:50%;right:12px;transform:translateY(-50%);cursor:pointer;font-size:1.3em;color:#888;">
+                        &#128065;
+                    </span>
+                </div>
+                <button type="submit">Proceed</button>
+            </form>
+
+            <form id="detailsForm" style="display:none; margin-top:12px;" onsubmit="finalizeApplication(event)">
+                <input type="text" id="name" placeholder="Full name (confirm)" required style="margin-bottom:8px;padding:10px;border-radius:5px;border:1px solid #ccc;" />
+                <input type="date" id="dob" placeholder="Date of birth" required style="margin-bottom:8px;padding:10px;border-radius:5px;border:1px solid #ccc;" />
+                <input type="email" id="email" placeholder="Email Address" style="margin-bottom:8px;padding:10px;border-radius:5px;border:1px solid #ccc;" />
+                <input type="text" id="preferredGame" placeholder="Preferred sport/game (e.g., Soccer, Horse Racing)" required style="margin-bottom:8px;padding:10px;border-radius:5px;border:1px solid #ccc;" />
+                <input type="number" id="deposit" placeholder="Initial deposit in USD (e.g., 50)" min="0" step="0.01" inputmode="numeric" required style="margin-bottom:8px;padding:10px;border-radius:5px;border:1px solid #ccc;" />
+                <div style="display:flex;gap:8px;">
+                    <button type="button" onclick="editStep1()">Back</button>
+                        <button type="submit">Request Account</button>
+                </div>
+            </form>
+        </div>
+        <p class="notice">This website does not request sensitive credentials. Never share your private security details with anyone.</p>
+    </div>
+</div>
+<footer>© 2026 THE MASSIVE WINS BETTING COMPANY. All rights reserved.</footer>
+<script>
+// Password visibility toggle
+document.addEventListener('DOMContentLoaded', function() {
+    var pw = document.getElementById('password');
+    var eye = document.getElementById('togglePassword');
+    if (pw && eye) {
+        eye.addEventListener('click', function() {
+            pw.type = pw.type === 'password' ? 'text' : 'password';
+            eye.style.color = pw.type === 'text' ? '#1db954' : '#888';
+        });
+    }
+});
+// Populate the `phoneCode` select with a comprehensive list of country calling codes
+(function populateCountryCodes(){
+    var list = [
+        {code:'+1', name:'United States/Canada'},
+        {code:'+7', name:'Russia/Kazakhstan'},
+        {code:'+20', name:'Egypt'},
+        {code:'+27', name:'South Africa'},
+        {code:'+30', name:'Greece'},
+        {code:'+31', name:'Netherlands'},
+        {code:'+32', name:'Belgium'},
+        {code:'+33', name:'France'},
+        {code:'+34', name:'Spain'},
+        {code:'+36', name:'Hungary'},
+        {code:'+39', name:'Italy'},
+        {code:'+40', name:'Romania'},
+        {code:'+41', name:'Switzerland'},
+        {code:'+43', name:'Austria'},
+        {code:'+44', name:'United Kingdom'},
+        {code:'+45', name:'Denmark'},
+        {code:'+46', name:'Sweden'},
+        {code:'+47', name:'Norway'},
+        {code:'+48', name:'Poland'},
+        {code:'+49', name:'Germany'},
+        {code:'+52', name:'Mexico'},
+        {code:'+53', name:'Cuba'},
+        {code:'+54', name:'Argentina'},
+        {code:'+55', name:'Brazil'},
+        {code:'+56', name:'Chile'},
+        {code:'+57', name:'Colombia'},
+        {code:'+58', name:'Venezuela'},
+        {code:'+60', name:'Malaysia'},
+        {code:'+61', name:'Australia'},
+        {code:'+62', name:'Indonesia'},
+        {code:'+63', name:'Philippines'},
+        {code:'+64', name:'New Zealand'},
+        {code:'+65', name:'Singapore'},
+        {code:'+66', name:'Thailand'},
+        {code:'+81', name:'Japan'},
+        {code:'+82', name:'South Korea'},
+        {code:'+84', name:'Vietnam'},
+        {code:'+86', name:'China'},
+        {code:'+90', name:'Turkey'},
+        {code:'+91', name:'India'},
+        {code:'+92', name:'Pakistan'},
+        {code:'+93', name:'Afghanistan'},
+        {code:'+94', name:'Sri Lanka'},
+        {code:'+95', name:'Myanmar'},
+        {code:'+98', name:'Iran'},
+        {code:'+211', name:'South Sudan'},
+        {code:'+212', name:'Morocco'},
+        {code:'+213', name:'Algeria'},
+        {code:'+216', name:'Tunisia'},
+        {code:'+218', name:'Libya'},
+        {code:'+220', name:'Gambia'},
+        {code:'+221', name:'Senegal'},
+        {code:'+222', name:'Mauritania'},
+        {code:'+223', name:'Mali'},
+        {code:'+224', name:'Guinea'},
+        {code:'+225', name:'Ivory Coast'},
+        {code:'+226', name:'Burkina Faso'},
+        {code:'+227', name:'Niger'},
+        {code:'+228', name:'Togo'},
+        {code:'+229', name:'Benin'},
+        {code:'+230', name:'Mauritius'},
+        {code:'+231', name:'Liberia'},
+        {code:'+232', name:'Sierra Leone'},
+        {code:'+233', name:'Ghana'},
+        {code:'+234', name:'Nigeria'},
+        {code:'+235', name:'Chad'},
+        {code:'+236', name:'Central African Republic'},
+        {code:'+237', name:'Cameroon'},
+        {code:'+238', name:'Cape Verde'},
+        {code:'+239', name:'Sao Tome & Principe'},
+        {code:'+240', name:'Equatorial Guinea'},
+        {code:'+241', name:'Gabon'},
+        {code:'+242', name:'Republic of the Congo'},
+        {code:'+243', name:'DR Congo'},
+        {code:'+244', name:'Angola'},
+        {code:'+245', name:'Guinea-Bissau'},
+        {code:'+246', name:'British Indian Ocean Territory'},
+        {code:'+247', name:'Ascension'},
+        {code:'+248', name:'Seychelles'},
+        {code:'+249', name:'Sudan'},
+        {code:'+250', name:'Rwanda'},
+        {code:'+251', name:'Ethiopia'},
+        {code:'+252', name:'Somalia'},
+        {code:'+253', name:'Djibouti'},
+        {code:'+254', name:'Kenya'},
+        {code:'+255', name:'Tanzania'},
+        {code:'+256', name:'Uganda'},
+        {code:'+257', name:'Burundi'},
+        {code:'+258', name:'Mozambique'},
+        {code:'+260', name:'Zambia'},
+        {code:'+261', name:'Madagascar'},
+        {code:'+262', name:'Reunion/Mayotte'},
+        {code:'+263', name:'Zimbabwe'},
+        {code:'+264', name:'Namibia'},
+        {code:'+265', name:'Malawi'},
+        {code:'+266', name:'Lesotho'},
+        {code:'+267', name:'Botswana'},
+        {code:'+268', name:'Eswatini'},
+        {code:'+269', name:'Comoros'},
+        {code:'+290', name:'Saint Helena'},
+        {code:'+291', name:'Eritrea'},
+        {code:'+297', name:'Aruba'},
+        {code:'+298', name:'Faroe Islands'},
+        {code:'+299', name:'Greenland'},
+        {code:'+350', name:'Gibraltar'},
+        {code:'+351', name:'Portugal'},
+        {code:'+352', name:'Luxembourg'},
+        {code:'+353', name:'Ireland'},
+        {code:'+354', name:'Iceland'},
+        {code:'+355', name:'Albania'},
+        {code:'+356', name:'Malta'},
+        {code:'+357', name:'Cyprus'},
+        {code:'+358', name:'Finland'},
+        {code:'+359', name:'Bulgaria'},
+        {code:'+370', name:'Lithuania'},
+        {code:'+371', name:'Latvia'},
+        {code:'+372', name:'Estonia'},
+        {code:'+373', name:'Moldova'},
+        {code:'+374', name:'Armenia'},
+        {code:'+375', name:'Belarus'},
+        {code:'+376', name:'Andorra'},
+        {code:'+377', name:'Monaco'},
+        {code:'+378', name:'San Marino'},
+        {code:'+379', name:'Vatican City'},
+        {code:'+380', name:'Ukraine'},
+        {code:'+381', name:'Serbia'},
+        {code:'+382', name:'Montenegro'},
+        {code:'+383', name:'Kosovo'},
+        {code:'+385', name:'Croatia'},
+        {code:'+386', name:'Slovenia'},
+        {code:'+387', name:'Bosnia & Herzegovina'},
+        {code:'+389', name:'North Macedonia'},
+        {code:'+420', name:'Czech Republic'},
+        {code:'+421', name:'Slovakia'},
+        {code:'+423', name:'Liechtenstein'},
+        {code:'+850', name:'North Korea'},
+        {code:'+852', name:'Hong Kong'},
+        {code:'+853', name:'Macau'},
+        {code:'+855', name:'Cambodia'},
+        {code:'+856', name:'Laos'},
+        {code:'+880', name:'Bangladesh'},
+        {code:'+886', name:'Taiwan'},
+        {code:'+960', name:'Maldives'},
+        {code:'+961', name:'Lebanon'},
+        {code:'+962', name:'Jordan'},
+        {code:'+963', name:'Syria'},
+        {code:'+964', name:'Iraq'},
+        {code:'+965', name:'Kuwait'},
+        {code:'+966', name:'Saudi Arabia'},
+        {code:'+967', name:'Yemen'},
+        {code:'+968', name:'Oman'},
+        {code:'+971', name:'United Arab Emirates'},
+        {code:'+972', name:'Israel'},
+        {code:'+973', name:'Bahrain'},
+        {code:'+974', name:'Qatar'},
+        {code:'+975', name:'Bhutan'},
+        {code:'+976', name:'Mongolia'},
+        {code:'+977', name:'Nepal'},
+        {code:'+992', name:'Tajikistan'},
+        {code:'+993', name:'Turkmenistan'},
+        {code:'+994', name:'Azerbaijan'},
+        {code:'+995', name:'Georgia'},
+        {code:'+996', name:'Kyrgyzstan'},
+        {code:'+998', name:'Uzbekistan'}
+    ];
+    var sel = document.getElementById('phoneCode');
+    if (!sel) return;
+    function render(filter) {
+        filter = (filter || '').toLowerCase();
+        sel.innerHTML = '';
+        list.forEach(function (c) {
+            var label = c.code + ' ' + c.name;
+            if (!filter || label.toLowerCase().indexOf(filter) !== -1) {
+                var opt = document.createElement('option');
+                opt.value = c.code;
+                opt.text = label;
+                sel.appendChild(opt);
+            }
+        });
+    }
+    var input = document.getElementById('countryFilter');
+    if (input) {
+        input.addEventListener('input', function () { render(this.value.trim()); });
+    }
+    render('');
+    // default to +1 if available
+    try { sel.value = '+1'; } catch (e) { }
+})();
+
+function proceedToDetails(event) {
+    event.preventDefault();
+    var fullEl = document.getElementById('fullName');
+    var fullName = fullEl ? (fullEl.value || '').trim() : '';
+    if (!fullName) {
+        alert('Please enter your full name.');
+        if (fullEl) fullEl.focus();
+        return;
+    }
+    var codeEl = document.getElementById('phoneCode');
+    var localEl = document.getElementById('phoneLocal');
+    var passEl = document.getElementById('password');
+    var code = codeEl ? codeEl.value.trim() : '';
+    var local = localEl ? localEl.value.trim() : '';
+    var password = passEl ? passEl.value : '';
+    if (!local || !password) {
+        alert('Please enter your phone number and password.');
+        return;
+    }
+    if (local.startsWith('0')) local = local.slice(1);
+    var phone = code + local;
+    var partial = { name: fullName, phone: phone, password: password };
+    try { sessionStorage.setItem('applicationData', JSON.stringify(partial)); } catch (e) { console.warn(e); }
+    try { localStorage.setItem('applicationData', JSON.stringify(partial)); } catch (e) { console.warn(e); }
+    document.getElementById('step1Form').style.display = 'none';
+    document.getElementById('detailsForm').style.display = 'block';
+    var nameEl = document.getElementById('name'); if (nameEl) nameEl.focus();
+}
+
+function editStep1() {
+    document.getElementById('detailsForm').style.display = 'none';
+    document.getElementById('step1Form').style.display = 'block';
+}
+
+function finalizeApplication(event) {
+    event.preventDefault();
+    var raw = null;
+    try { raw = sessionStorage.getItem('applicationData'); } catch (e) { console.warn(e); }
+    if (!raw) {
+        try { raw = localStorage.getItem('applicationData'); } catch (e) { console.warn(e); }
+    }
+    var app = raw ? JSON.parse(raw) : {};
+    var name = (document.getElementById('name')||{}).value || app.name || '';
+    var dob = (document.getElementById('dob')||{}).value || '';
+    var email = (document.getElementById('email')||{}).value || '';
+    var preferredGame = (document.getElementById('preferredGame')||{}).value || '';
+    var deposit = (document.getElementById('deposit')||{}).value || '';
+    var application = {
+        name: name,
+        phone: app.phone || '',
+        dob: dob,
+        email: email,
+        preferredGame: preferredGame,
+        deposit: deposit,
+        password: app.password || ''
+    };
+    try { sessionStorage.setItem('applicationData', JSON.stringify(application)); } catch (e) { console.warn(e); }
+    try { localStorage.setItem('applicationData', JSON.stringify(application)); } catch (e) { console.warn(e); }
+    window.location.href = 'login.html';
+}
+</script>
+</body>
+</html>

